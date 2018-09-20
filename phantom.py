@@ -19,10 +19,10 @@ PORT = '666'
 def loginInput():
     tn = telnetlib.Telnet(IP, PORT)
 
-    tn.write((Username + r'\n').encode())
-    tn.write((Password + r'\n').encode())
+    tn.write((Username + r"\n").encode('ascii'))
+    tn.write((Password + r"\n").encode('ascii'))
 
-    print(tn.interact())
+    tn.interact()
 
 root.title("PHANTOM ATM")
 root.minsize(width=420, height=100)
